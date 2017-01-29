@@ -1,0 +1,26 @@
+{
+  "name": "jquery_game",
+  "version": "1.0.0",
+  "description": "JQuery : Faire le \"Jeu dont vous êtes le héros\".",
+  "main": "game.js",
+  "dependencies": {
+    "eslint-config-rallycoding": "^3.2.0"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-es5": "^1.1.0",
+    "eslint-config-rallycoding": "^3.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Michaelvilleneuve/dawin-jquery-game.git"
+  },
+  "author": "Michaël Villeneuve",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Michaelvilleneuve/dawin-jquery-game/issues"
+  },
+  "homepage": "https://github.com/Michaelvilleneuve/dawin-jquery-game#readme"
+}
