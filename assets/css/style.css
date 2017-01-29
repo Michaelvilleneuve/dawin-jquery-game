@@ -1,0 +1,125 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.lifes {
+  position: fixed;
+  right: 0;
+  width: 100px;
+  top: 30px;
+  right: 20px;
+  z-index: 1;
+}
+
+section, #transition {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s;
+  transform: translateX(-200px);
+}
+
+section.active, #transition.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+section p {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  height: 100px;
+  background: black;
+  color: white;
+  margin: 0;
+  line-height: 100px;
+  padding-left: 30px;
+  font-size: 35px;
+}
+
+.actions {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+  background: black;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  color: white;
+  border-bottom: 1px solid #fff;
+  font-size: 20px;
+  margin: 15px;
+  cursor: pointer;
+}
+
+#transition {
+  z-index: 9;
+  background: black;
+  color: white;
+  text-align: center;
+}
+#transition > div {
+  height: 300px;
+  width: 500px;
+  font-size: 45px;
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+#beginning {
+  background-image: url('../img/intro.jpg');
+}
+
+#intro {
+  background-image: url('../img/kidnapping.jpg');
+}
+
+#kidnapping {
+  background-image: url('../img/kidnapping.jpg');
+}
+
+#dori {
+  background-image: url('../img/dori.jpg');
+}
+
+#faille {
+  background-image: url('../img/faille.jpg');
+}
+
+#meduses {
+  background-image: url('../img/meduses.jpg');
+}
+
+#poisson-lune {
+  background-image: url('../img/poisson-lune.jpg');
+}
+
+#poisson-lune-transition-1 {
+  background-image: url('../img/poissons-lune-transition-1.jpg');
+}
+
+#masque {
+  background-image: url('../img/masque.jpg');
+}

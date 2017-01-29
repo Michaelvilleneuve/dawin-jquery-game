@@ -23,17 +23,9 @@
 
 	<section id="beginning">
 		<div class="actions">
-			<button class="action" data-step="intro" data-bonus="0">Commencer</button>
+			<button class="action" data-step="kidnapping" data-bonus="0">Commencer</button>
 		</div>
 	</section>
-
-	<section id="intro">
-		<p>Némo a été capturé, tu es son père, tu dois le libérer ! </p>
-		<div class="actions">
-			<button class="action" data-step="kidnapping" data-bonus="0">Continuer</button>
-		</div>
-	</section>
-
 	<?php include('./steps/kidnapping.php'); ?>
 	<?php include('./steps/dori.php'); ?>
 	<?php include('./steps/masque.php'); ?>
