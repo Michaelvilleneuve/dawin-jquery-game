@@ -27,10 +27,22 @@ var Game = {
     var element = $(e.target);
     if (typeof element.data('message') !== 'undefined') {
       this.transition(element.data('message'));
+    } else {
+      this.transitionSimple();
     }
     this.currentStep = element.data('step');
     this.bonus += element.data('bonus');
-    typeof element.data('wrong') === 'undefined' ? this.setStage() : this.loseLifeAndSetStage();
+
+    setTimeout(function () {
+      typeof element.data('wrong') === 'undefined' ? Game.setStage() : Game.loseLifeAndSetStage();
+    }, 1000);
+  },
+
+  transitionSimple: function () {
+    $('#overlay').addClass('show');
+    setTimeout(function () {
+      $('#overlay').removeClass('show');
+    }, 2000);
   },
 
   transition: function (message) {
@@ -41,7 +53,7 @@ var Game = {
     transitionEl.addClass('active').find('div').html(message);
     setTimeout(function () {
       transitionEl.removeClass('active');
-    }, 5000);
+    }, 3000);
   },
 
   loseLifeAndSetStage: function () {
