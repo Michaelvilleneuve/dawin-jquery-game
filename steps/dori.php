@@ -1,4 +1,4 @@
-<section id="dori">
+<section id="dori" class="video">
   <p>
     Tu rencontres une certaine "Dori" qui prétend avoir vu le bateau qui a capturé Némo.
     <br>
@@ -21,6 +21,7 @@
       data-step="kidnapping"
       data-message="C'est méchant d'être méchant. Vilain. Tu retournes en arrière."
       data-bonus="-1"
+      data-wrong
     >
       Lui dire d'aller se faire voir
     </button>

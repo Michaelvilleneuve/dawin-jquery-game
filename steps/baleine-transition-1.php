@@ -1,12 +1,12 @@
-<section id="poisson-lune-transition-1" class="ended">
+<section id="baleine-transition-1" class="video">
   <p>
-    Les poissons avaient raison ! Vous êtes sur la bonne voie !
+    Ça a marché ! La baleine a compris Dori et vous a éjecté.
   </p>
 
   <div class="actions">
     <button
       class="action"
-      data-step="faille"
+      data-step="pelican"
       data-bonus="0"
     >
       Continuer

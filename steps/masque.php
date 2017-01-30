@@ -1,4 +1,4 @@
-<section id="masque">
+<section id="masque" class="video">
   <p>
       Sur le chemin, vous trouvez le masque du plongeur qui a enlevé Némo.
       <br/>
@@ -21,6 +21,7 @@
       data-step="dori"
       data-bonus="-1"
       data-message="Le requin n'était finalement pas gentil. Il t'a mangé... Tu recules d'une case."
+      data-wrong
     >
       Demander de l'aide à un requin que tu viens de rencontrer
     </button>

@@ -1,4 +1,4 @@
-<section id="faille">
+<section id="faille" class="video">
   <p>
     Vous arrivez devant une énorme faille, l'intérieur est sombre et effrayant...
   </p>
@@ -6,7 +6,7 @@
   <div class="actions">
     <button
       class="action"
-      data-step="tortue"
+      data-step="tortues"
       data-bonus="3"
       data-message="La traversée de la faille se fait sans encombre,
         vous vous retrouvez devant un grand courant marin."

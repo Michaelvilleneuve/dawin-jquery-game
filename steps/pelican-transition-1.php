@@ -1,12 +1,12 @@
-<section id="poisson-lune-transition-1" class="ended">
+<section id="pelican-transition-1" class="video">
   <p>
-    Les poissons avaient raison ! Vous êtes sur la bonne voie !
+    Le pélican vous amène voir Némo !
   </p>
 
   <div class="actions">
     <button
       class="action"
-      data-step="faille"
+      data-step="retrouvailles"
       data-bonus="0"
     >
       Continuer

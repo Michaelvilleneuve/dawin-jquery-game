@@ -1,4 +1,4 @@
-<section id="meduses">
+<section id="meduses" class="video">
   <p>
     Sur le chemin, un obstacle se présente : un énorme banc de méduses vous bloque le passage.
   </p>
@@ -6,20 +6,28 @@
   <div class="actions">
     <button
       class="action"
-      data-step="meduses"
-      data-bonus="0"
-      data-message="La traversée de la faille se fait sans encombre,
-        vous vous retrouvez devant un grand courant marin."
+      data-step="faille"
+      data-bonus="-1"
+      data-message="Tu es mort électrocuté par les méduses. Tu reviens en arrière."
+      data-wrong
     >
-      Vous prenez votre courage à deux mains, et tentez de passer à travers
+      Essayer de passer entre les méduses
     </button>
 
     <button
       class="action"
-      data-step="meduses"
+      data-step="meduses-transition-1"
       data-bonus="1"
     >
-      La faille vous fait peur, vous passez par dessus.
+      Décider de sauter sur le chapeau des méduses
+    </button>
+
+    <button
+      class="action"
+      data-step="meduses-transition-2"
+      data-bonus="0"
+    >
+      Aller à la surface pour essayer de voir plus loin
     </button>
   </div>
 </section>

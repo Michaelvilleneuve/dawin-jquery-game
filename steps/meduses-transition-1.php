@@ -1,12 +1,12 @@
-<section id="poisson-lune-transition-1" class="ended">
+<section id="meduses-transition-1" class="video">
   <p>
-    Les poissons avaient raison ! Vous êtes sur la bonne voie !
+    Ça a l'air de fonctionner !
   </p>
 
   <div class="actions">
     <button
       class="action"
-      data-step="faille"
+      data-step="tortues"
       data-bonus="0"
     >
       Continuer
