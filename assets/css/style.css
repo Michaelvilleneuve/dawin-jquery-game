@@ -94,6 +94,22 @@ section.ended * {
   opacity: 1;
 }
 
+#overlay {
+  visibility: hidden;
+  opacity: 0;
+  transition: 1.5s;
+  z-index: 9999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+#overlay.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 .actions button {
   background: none;
   border: none;
