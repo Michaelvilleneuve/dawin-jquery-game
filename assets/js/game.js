@@ -1,9 +1,12 @@
 var Game = {
   currentStep: 'beginning',
-  lifes: 5,
+  lifes: 3,
   bonus: 0,
 
   init: function () {
+    $('.start').on('click', function () {
+      document.querySelector('audio').muted = true;
+    });
     this.setLifes();
     this.setStage();
     this.setActions();
@@ -25,7 +28,6 @@ var Game = {
     if (typeof element.data('message') !== 'undefined') {
       this.transition(element.data('message'));
     }
-
     this.currentStep = element.data('step');
     this.bonus += element.data('bonus');
     typeof element.data('wrong') === 'undefined' ? this.setStage() : this.loseLifeAndSetStage();
@@ -56,18 +58,37 @@ var Game = {
   },
 
   setStage: function () {
+    var newEl = $('#' + this.currentStep);
     $('section').removeClass('active');
-    $('#' + this.currentStep).addClass('active');
+    newEl.addClass('active');
+    this.addVideo(newEl);
+    $('.bonus').html(this.bonus * 10 + ' points');
+  },
+
+  addVideo: function (el) {
+    $('#vid').remove();
+    var source = '/assets/videos/' + $(el).attr('id') + '.mp4';
+
+    if (el.hasClass('video')) {
+      el.prepend('<video id="vid" autoplay><source src="' + source + '" type="video/mp4"></video>');
+      $('#vid').on('ended click', function () {
+        el.css('background-image', 'url(\'assets/img/' + Game.currentStep + '.jpg\')');
+        el.addClass('ended');
+        $(this).remove();
+      });
+    } else {
+      el.css('background-image', 'url(\'assets/img/' + this.currentStep + '.jpg\')');
+    }
   },
 
   endGame: function () {
-    if (confirm('Fin du jeu ! Rejouer ? ')) {
+    if (confirm('Tu as perdu ! Rejouer ? ')) {
       this.replay();
     }
   },
 
   replay: function () {
-    this.lifes = 5;
+    this.lifes = 3;
     this.bonus = 0;
     this.currentStep = 'beginning';
     this.init();

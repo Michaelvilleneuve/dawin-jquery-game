@@ -3,6 +3,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+  background: black;
 }
 body {
   height: 100%;
@@ -14,10 +15,23 @@ body {
 .lifes {
   position: fixed;
   right: 0;
+  width: 100%;
+  top: 0px;
+  height: 60px;
+  text-align: right;
+  padding: 20px;
+  z-index: 1;
+  background: black;
+}
+
+.bonus {
+  position: fixed;
+  right: 0;
   width: 100px;
-  top: 30px;
+  top: 60px;
   right: 20px;
   z-index: 1;
+  color: #fff;
 }
 
 section, #transition {
@@ -26,28 +40,37 @@ section, #transition {
   position: absolute;
   background-size: 100%;
   visibility: hidden;
+  display: none;
   opacity: 0;
-  transition: .4s;
-  transform: translateX(-200px);
+  transition: 2s;
+  overflow: hidden;
 }
 
 section.active, #transition.active {
   visibility: visible;
   opacity: 1;
-  transform: translateX(0);
+  display: block;
 }
 
+section * {
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s;
+}
 section p {
   width: 100%;
   position: fixed;
-  top: 0;
-  height: 100px;
-  background: black;
+  top: 115px;
+  z-index: 9;
   color: white;
   margin: 0;
-  line-height: 100px;
-  padding-left: 30px;
-  font-size: 35px;
+  font-size: 24px;
+  background: rgba(0, 0, 0, 0.5);
+  left: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  line-height: 140%;
 }
 
 .actions {
@@ -57,7 +80,18 @@ section p {
   height: 100px;
   text-align: center;
   line-height: 100px;
-  background: black;
+  z-index: 9;
+}
+
+section video {
+  visibility: visible;
+  opacity: 1;
+  width: 100%;
+}
+
+section.ended * {
+  visibility: visible;
+  opacity: 1;
 }
 
 .actions button {
@@ -71,7 +105,7 @@ section p {
 }
 
 #transition {
-  z-index: 9;
+  z-index: 99;
   background: black;
   color: white;
   text-align: center;
@@ -88,38 +122,10 @@ section p {
   top: 0;
 }
 
-#beginning {
-  background-image: url('../img/intro.jpg');
-}
-
-#intro {
-  background-image: url('../img/kidnapping.jpg');
-}
-
-#kidnapping {
-  background-image: url('../img/kidnapping.jpg');
-}
-
-#dori {
-  background-image: url('../img/dori.jpg');
-}
-
-#faille {
-  background-image: url('../img/faille.jpg');
-}
-
-#meduses {
-  background-image: url('../img/meduses.jpg');
-}
-
-#poisson-lune {
-  background-image: url('../img/poisson-lune.jpg');
-}
-
-#poisson-lune-transition-1 {
-  background-image: url('../img/poissons-lune-transition-1.jpg');
-}
-
-#masque {
-  background-image: url('../img/masque.jpg');
+footer {
+  background: black;
+  position: fixed;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
 }
