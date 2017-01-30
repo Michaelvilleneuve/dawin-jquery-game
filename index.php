@@ -46,6 +46,7 @@
 	<?php include('./steps/pelican-transition-2.php'); ?>
 	<?php include('./steps/retrouvailles.php'); ?>
 
+	<div id="overlay"></div>
 	<footer></footer>
 </body>
 </html>
