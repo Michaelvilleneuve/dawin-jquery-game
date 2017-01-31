@@ -12,6 +12,10 @@ body {
   padding: 0;
 }
 
+* {
+  font-family: 'Montez', cursive;
+}
+
 .lifes {
   position: fixed;
   right: 0;
@@ -24,14 +28,27 @@ body {
   background: black;
 }
 
+.lifes img {
+  width: 50px;
+  margin-left: 10px;
+}
+
 .bonus {
   position: fixed;
-  right: 0;
+  left: 140px;
   width: 100px;
-  top: 60px;
-  right: 20px;
-  z-index: 1;
+  top: 30px;
+  z-index: 9;
+  font-size: 25px;
   color: #fff;
+}
+
+#points-dori {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9;
+  width: 120px;
 }
 
 section, #transition {
@@ -64,7 +81,7 @@ section p {
   z-index: 9;
   color: white;
   margin: 0;
-  font-size: 24px;
+  font-size: 30px;
   background: rgba(0, 0, 0, 0.5);
   left: 10px;
   padding: 20px;
@@ -83,8 +100,14 @@ section p {
   z-index: 9;
 }
 
+section > div {
+  transition: 1s;
+  opacity: 1;
+}
+
 section video {
   visibility: visible;
+  transition: 1s;
   opacity: 1;
   width: 100%;
 }
@@ -110,12 +133,16 @@ section.ended * {
   opacity: 1;
 }
 
+.removing {
+  opacity: 0 !important;
+}
+
 .actions button {
   background: none;
   border: none;
   color: white;
   border-bottom: 1px solid #fff;
-  font-size: 20px;
+  font-size: 33px;
   margin: 15px;
   cursor: pointer;
 }
@@ -144,4 +171,41 @@ footer {
   bottom: 0;
   height: 100px;
   width: 100%;
+}
+
+
+#bonus-animation {
+  position: fixed;
+  z-index: 9999;
+  color: white;
+  left: 50px;
+  top: 50px;
+  font-size: 130px;
+  transition: 2s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.animate-point {
+  animation-name: points;
+  animation-duration: 0.2s;
+  animation-iteration-count: 3;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+@keyframes points {
+  0%   {
+    transform: rotate(0deg);
+  }
+  33%  {
+    transform: rotate(30deg);
+  }
+  66%  {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+
 }
