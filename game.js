@@ -24,9 +24,10 @@ const Game = {
   init() {
     this.setScenes();
 
-    $('.start').on('click', () => {
+    $(document).on('click', '.start', () => {
       document.querySelector('audio').muted = true;
     });
+    $(document).on('click', '.replay', this.replay.bind(this));
 
     this.setLifes();
     this.setStage();
@@ -44,7 +45,7 @@ const Game = {
   setLifes() {
     $('.lifes').html('');
     for (let i = 0; i < this.lifes; i++) {
-      $('.lifes').append('❤️');
+      $('.lifes').append('<img src="/assets/img/nemo.png"/>');
     }
   },
 
@@ -60,11 +61,39 @@ const Game = {
       this.transitionSimple();
     }
     this.currentStep = element.data('step');
-    this.bonus += element.data('bonus');
+    this.addBonus(element.data('bonus'));
 
     setTimeout(() => {
       typeof element.data('wrong') === 'undefined' ? Game.setStage() : Game.loseLifeAndSetStage();
     }, 1200);
+  },
+
+  addBonus(bonus) {
+    this.bonus += bonus;
+    this.showResult();
+
+    if (bonus !== 0) {
+      $('#bonus-animation').html(`${bonus > 0 ? '+' : ''}${bonus * 10}`).addClass('animate-point');
+      setTimeout(() => {
+        $('#bonus-animation').removeClass('animate-point');
+      }, 2000);
+    }
+  },
+
+  showResult() {
+    let result = '';
+    if (this.bonus < 3) {
+      result = 'Vous êtes un très mauvais père ! Vous méritez de mourrir.';
+    } else if (this.result < 5) {
+      result = 'Vous ne vous êtes pas foulé... Némo mérite mieux que vous !';
+    } else if (this.result < 8) {
+      result = 'Mouais, dans la moyenne. On va espèrer que ça ne vous arrive pas quand même...';
+    } else if (this.result < 10) {
+      result = 'Ouah pas mal ! Vous êtes un bon père, c\'est sûr !';
+    } else {
+      result = 'Incroyable !! On croirait presque que vous avez triché !!';
+    }
+    $('#result').html(result);
   },
 
   transitionSimple() {
@@ -103,22 +132,23 @@ const Game = {
     $('section').removeClass('active');
     newEl.addClass('active');
     this.addVideo(newEl);
-    $('.bonus').html(`${this.bonus * 10} points`);
+    $('.bonus').html(this.bonus * 10);
   },
 
   addVideo(el) {
     $('#vid').remove();
     const source = `assets/videos/${$(el).attr('id')}.mp4`;
 
+    el.css('background-image', `url('assets/img/${Game.currentStep}.jpg')`);
     if (el.hasClass('video')) {
-      el.prepend(`<video id="vid" autoplay><source src="${source}" type="video/mp4"></video>`);
+      el.prepend(`<div><video id="vid" autoplay><source src="${source}" type="video/mp4"></video></div>`);
       $('#vid').on('ended click', function () {
-        el.css('background-image', `url('assets/img/${Game.currentStep}.jpg')`);
         el.addClass('ended');
-        $(this).remove();
+        $(this).parent().addClass('removing');
+        setTimeout(() => {
+          $('#vid').remove();
+        }, 2000);
       });
-    } else {
-      el.css('background-image', `url('assets/img/${this.currentStep}.jpg')`);
     }
   },
 
@@ -132,7 +162,9 @@ const Game = {
     this.lifes = 3;
     this.bonus = 0;
     this.currentStep = 'beginning';
-    this.init();
+    this.setLifes();
+    this.setStage();
+    this.setActions();
   }
 
 };
