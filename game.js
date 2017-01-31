@@ -23,12 +23,6 @@ const Game = {
 
   init() {
     this.setScenes();
-
-    $(document).on('click', '.start', () => {
-      document.querySelector('audio').muted = true;
-    });
-    $(document).on('click', '.replay', this.replay.bind(this));
-
     this.setLifes();
     this.setStage();
     this.setActions();
@@ -50,6 +44,10 @@ const Game = {
   },
 
   setActions() {
+    $(document).on('click', '.start', () => {
+      document.querySelector('audio').muted = true;
+    });
+    $(document).on('click', '.replay', this.replay.bind(this));
     $(document).on('click', 'button.action', this.toggleStep.bind(this));
   },
 
