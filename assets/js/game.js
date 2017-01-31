@@ -35,7 +35,6 @@ var Game = {
   setScenes: function () {
     for (var i = 0; i < this.scenes.length; i++) {
       $.get('/steps/' + this.scenes[i] + '.html', function (data) {
-        console.info(data);
         $('#section-container').append(data);
       });
     }
@@ -108,7 +107,7 @@ var Game = {
 
   addVideo: function (el) {
     $('#vid').remove();
-    var source = '/assets/videos/' + $(el).attr('id') + '.mp4';
+    var source = 'assets/videos/' + $(el).attr('id') + '.mp4';
 
     if (el.hasClass('video')) {
       el.prepend('<video id="vid" autoplay><source src="' + source + '" type="video/mp4"></video>');
