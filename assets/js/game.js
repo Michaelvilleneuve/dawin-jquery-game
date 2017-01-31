@@ -2,14 +2,43 @@ var Game = {
   currentStep: 'beginning',
   lifes: 3,
   bonus: 0,
+  scenes: [
+    'baleine',
+    'baleine-transition-1',
+    'dori',
+    'faille',
+    'kidnapping',
+    'masque',
+    'meduses',
+    'meduses-transition-1',
+    'meduses-transition-2',
+    'pelican',
+    'pelican-transition-1',
+    'pelican-transition-2',
+    'poisson-lune',
+    'poisson-lune-transition-1',
+    'retrouvailles',
+    'tortues'
+  ],
 
   init: function () {
+    this.setScenes();
+
     $('.start').on('click', function () {
       document.querySelector('audio').muted = true;
     });
     this.setLifes();
     this.setStage();
     this.setActions();
+  },
+
+  setScenes: function () {
+    for (var i = 0; i < this.scenes.length; i++) {
+      $.get('/steps/' + this.scenes[i] + '.html', function (data) {
+        console.info(data);
+        $('#section-container').append(data);
+      });
+    }
   },
 
   setLifes: function () {
@@ -35,7 +64,7 @@ var Game = {
 
     setTimeout(function () {
       typeof element.data('wrong') === 'undefined' ? Game.setStage() : Game.loseLifeAndSetStage();
-    }, 1000);
+    }, 1200);
   },
 
   transitionSimple: function () {
