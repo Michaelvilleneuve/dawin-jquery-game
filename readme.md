@@ -1,3 +1,7 @@
+Vous pouvez jouer au jeu à l'adresse suivante :
+https://jquery-dawin.herokuapp.com
+
+
 Installation
 ===
 
@@ -43,3 +47,20 @@ Mais vous pouvez toujours copier le contenu du dossier public et l'utiliser comm
 ``
 sudo php -S localhost:3000 ./
 ``
+
+Les étapes pour gagner
+--
+1. Commencer
+2. Partir à sa recherche
+3. Accepter
+4. Demander son aide
+5. Suivre la direction qu'ils indiquent (raccourci: 'Ton instinct te dis de prendre direction ouest')
+6. Continuer
+7. Passer par dessus (raccourci: 'Tenter de passer à travers')
+8. Décider de sauter sur le chapeau des méduses
+9. Continuer
+10. Rejoindre les tortues
+11. Accepter la proposition absurde
+12. Continuer
+13. Sauter dans le bec du pélican
+14. Continuer
