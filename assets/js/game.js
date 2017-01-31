@@ -34,7 +34,7 @@ var Game = {
 
   setScenes: function () {
     for (var i = 0; i < this.scenes.length; i++) {
-      $.get('/steps/' + this.scenes[i] + '.html', function (data) {
+      $.get('steps/' + this.scenes[i] + '.html', function (data) {
         $('#section-container').append(data);
       });
     }
