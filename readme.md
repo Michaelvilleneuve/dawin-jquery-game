@@ -1,14 +1,45 @@
-JQuery :
-Faire le "Jeu dont vous êtes le héros".
+Installation
+===
 
-Il faut gérer des actions automatiques, les dégâts et les points de vie, un scénario d'entre 15 et 20 sections, et au moins 2 fonctionnalités supplémentaires (par exemple gestion de l'inventaire, un système de combat, une minimap, une énigme, gérer les paragraphes à l'extérieur du html...).
+Pré-requis : Avoir installé Node.JS et NPM. Ensuite :
 
-Dans le mail qui sera envoyé au prof, la solution doit être fournie (le déroulé des clics nécessaires à arriver à la fin). 
-Des commentaires sur les parties compliquées à corriger. Le design et le HTML/CSS doit être cohérent avec ce qui est raconté.
-L'adresse du prof: sbenard@mtwin.fr
+Pour développer en ES6 et compiler le JS :
+`
+sudo npm install -g webpack
+`
 
-L'objet du mail doit être sous la forme "SWORD NOM 1, NOM 2".
+Pour installer les dépendances :
+`
+npm install
+`
 
-Le projet doit être fourni sous format ZIP ou URL ou en pièces jointes séparées bien dégueulasses.
+Pour recompiler automatiquement le JS :
+`
+webpack --watch
+`
 
-Chaque minute de retard = -1.
+Pour lancer le serveur :
+`
+node server.js
+`
+
+Ou se trouve le jeu ?
+--
+Le code du jeu se trouve à la racine : game.js.
+Le reste est dans le dossier public.
+
+
+Pourquoi utiliser un serveur et non ouvrir index.html ?
+--
+Les appels ajax n'étant autorisés qu'au sein du même nom de domaine, il est impossible d'appeler en xhr des chemins de fichiers sur le disque dur.
+On doit donc scoper le tout via un serveur.
+
+En l'occurence, c'est scopé sur localhost:3000
+
+J'ai préféré intégrer Node.JS afin de rester dans du JS qui est un peu l'objet du cours. De plus dans la mesure ou j'utilise des packages NPM, c'est cohérent de rester sur ce principe.
+
+Mais vous pouvez toujours copier le contenu du dossier public et l'utiliser comme n'importe quel serveur du genre :
+
+``
+sudo php -S localhost:3000 ./
+``
